@@ -9,13 +9,17 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(myMap);
 
+// To do:
+
 // Store the API query variables.
-// For docs, refer to https://dev.socrata.com/docs/queries/where.html.
-// And, refer to https://dev.socrata.com/foundry/data.cityofnewyork.us/erm2-nwe9.
 var baseURL = "https://data.cityofnewyork.us/resource/fhrw-4uyv.json?";
-var date = "$where=created_date between'2016-01-01T00:00:00' and '2017-01-01T00:00:00'";
+// Add the dates in the ISO formats
+var date = "$where=created_date between '2016-01-01T00:00:00' and '2017-01-01T00:00:00'";
+// Add the complaint type.
 var complaint = "&complaint_type=Rodent";
+// Add a limit.
 var limit = "&$limit=10000";
+
 
 // Assemble the API query URL.
 var url = baseURL + date + complaint + limit;
@@ -44,5 +48,5 @@ d3.json(url).then(function(response) {
 
   // Add our marker cluster layer to the map.
   myMap.addLayer(markers);
-
+  
 });
