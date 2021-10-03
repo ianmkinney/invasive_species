@@ -5,10 +5,6 @@ import time
 from sqlalchemy import create_engine
 from connection_string import connection_string
 
-# Bounding Box for Georgia, USA
-# [South Latitude, North Latitude, West Longitude, East Longitude]
-# [-85.606749,30.359092,-80.843756,35.000591]
-
 observationsSep = get_observations(place_id=23, per_page=200, introduced=True, quality_grade='research', month=9)
 observationsAug = get_observations(place_id=23, per_page=200, introduced=True, quality_grade='research', month=8)
 observationsJul = get_observations(place_id=23, per_page=200, introduced=True, quality_grade='research', month=7)
