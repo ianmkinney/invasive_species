@@ -1,7 +1,7 @@
 // Creating the map object
 var myMap = L.map("map", {
-  center: [40.7, -73.95],
-  zoom: 11
+  center: [33.74, -83.38],
+  zoom: 6
 });
 
 // Adding the tile layer
@@ -12,36 +12,33 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // To do:
 
 // Store the API query variables.
-var baseURL = "https://data.cityofnewyork.us/resource/fhrw-4uyv.json?";
-// Add the dates in the ISO formats
-var date = "$where=created_date between '2016-01-01T00:00:00' and '2017-01-01T00:00:00'";
-// Add the complaint type.
-var complaint = "&complaint_type=Rodent";
-// Add a limit.
-var limit = "&$limit=10000";
-
-
-// Assemble the API query URL.
-var url = baseURL + date + complaint + limit;
+var observations_json = "../static/data/database.json"
 
 // Get the data with d3.
-d3.json(url).then(function(response) {
+d3.json(observations_json).then(function(data) {
+
+  console.log(data['values']);
 
   // Create a new marker cluster group.
   var markers = L.markerClusterGroup();
 
   // Loop through the data.
-  for (var i = 0; i < response.length; i++) {
+  for (var i = 0; i < data['values'].length; i++) {
 
     // Set the data location property to a variable.
-    var location = response[i].location;
+    var location = data['values'][i][4];
+
+    location = location.replace("{","").replace("}","").split(",")
+
+
+    console.log(location[1])
 
     // Check for the location property.
     if (location) {
 
       // Add a new marker to the cluster group, and bind a popup.
-      markers.addLayer(L.marker([location.coordinates[1], location.coordinates[0]])
-        .bindPopup(response[i].descriptor));
+      markers.addLayer(L.marker([location[0], location[1]])
+        .bindPopup(data['values'][i][2]));
     }
 
   }

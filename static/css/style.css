@@ -5,12 +5,11 @@ h1 {
 body {
     padding: 0;
     margin: 0;
-  }
+}
   
-  #map {
-    position: absolute;
-    top: 10;
-    bottom: 0;
-    height: 50%;
-    width: 50%;
-  }
+#map {
+  position: absolute;
+  top: relative;
+  height: 50%;
+  width: 100%;
+}
