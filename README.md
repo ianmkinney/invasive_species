@@ -9,7 +9,3 @@ This is the documentation for the iNatualist API. Using this we will pull recent
 https://www.invasive.org/species/list.cfm?id=2
 
 This link is for a simple list of invasive species that can be scraped and used to do separate API calls to assemble our database. 
-
-US State Bounding Boxes
-
-https://observablehq.com/@rdmurphy/u-s-state-bounding-boxes
