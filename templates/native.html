@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Marker Clusters</title>
+    <title>GA Animals</title>
     
     <!-- Leaflet JavaScript code -->
     <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
@@ -30,12 +30,17 @@
   </head>
   <body>
 
-    <h1>Invasive Species in Georgia</h1>
+    <h1>Native Species in Georgia</h1>
 
+    <div class="btn-group" style="width:100%">
+      <button style="width:33.3%" id="Introduced" type="button" href="{{ url_for('introduced') }} " class="button">Introduced</button>
+      <button style="width:33.3%" id="Native" type="button" href="{{ url_for('home')}} " class="button">Native</button>
+      <button style="width:33.3%" id="Threatened" type="button" href="{{ url_for('threatened')}} " class="button">Threatened</button>
+    </div>
     <div id="map"></div>
 
     <!-- Our JavaScript -->
-    <script type="text/javascript" src="../static/js/map.js"></script>
+    <script type="text/javascript" src="../static/js/map_native.js"></script>
 
   </body>
 </html>

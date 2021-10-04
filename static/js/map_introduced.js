@@ -12,7 +12,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // To do:
 
 // Store the API query variables.
-var observations_json = "../static/data/database.json"
+var observations_json = "../static/data/introduced.json"
 
 // Get the data with d3.
 d3.json(observations_json).then(function(data) {
@@ -28,17 +28,14 @@ d3.json(observations_json).then(function(data) {
     // Set the data location property to a variable.
     var location = data['values'][i][4];
 
-    location = location.replace("{","").replace("}","").split(",")
-
-
-    console.log(location[1])
+    location = location.replace("{","").replace("}","").split(",");
 
     // Check for the location property.
     if (location) {
 
       // Add a new marker to the cluster group, and bind a popup.
       markers.addLayer(L.marker([location[0], location[1]])
-        .bindPopup(data['values'][i][2]));
+        .bindPopup(data['values'][i][7], data['values'][i][6]));
     }
 
   }
