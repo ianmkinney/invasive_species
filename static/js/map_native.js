@@ -43,4 +43,24 @@ d3.json(observations_json).then(function(data) {
   // Add our marker cluster layer to the map.
   myMap.addLayer(markers);
   
+  objList = [];
+  obj = {};
+  values = data.values.map(obj => obj[5])
+  values.forEach(item => {
+    if (!objList.includes(item)) {
+      objList.push(item);
+      obj[item] = 0;
+    };
+    obj[item] += 1
+  })
+
+  var data = [
+    {
+      x: Object.keys(obj),
+      y: Object.values(obj),
+      type: 'bar'
+    }
+  ];
+  
+  Plotly.newPlot('bar', data);
 });
