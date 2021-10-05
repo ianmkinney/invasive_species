@@ -37,8 +37,16 @@
       <a href=/><button style="width:33.3%" id="native" type="button" class="button">Native</button></a>
       <a href=/threatened><button style="width:33.3%" id="threatened.html" type="button" class="button">Threatened</button></a>
     </div>
-    <div id="bar"></div>
     <div id="map"></div>
+    <div id="bar"></div>
+    <div id="burst"></div>
+    <script type="module">
+      import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+      import define from "https://api.observablehq.com/@ianmkinney/introduced-observations-in-georgia.js?v=3";
+      new Runtime().module(define, name => {
+        if (name === "ccolohart") return new Inspector(document.querySelector("#burst"));
+      });
+    </script>
 
     <!-- Our JavaScript -->
     <script src="https://cdn.plot.ly/plotly-2.4.2.min.js"></script>

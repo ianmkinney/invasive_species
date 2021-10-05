@@ -40,6 +40,14 @@
   
     <div id="bar"></div>
     <div id="map"></div>
+    <div id="burst"></div>
+    <script type="module">
+      import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+      import define from "https://api.observablehq.com/@ianmkinney/nid-programme-of-study.js?v=3";
+      new Runtime().module(define, name => {
+        if (name === "ccolohart") return new Inspector(document.querySelector("#burst"));
+      });
+    </script>
 
 
     <!-- Our JavaScript -->
