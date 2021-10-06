@@ -1,0 +1,24 @@
+{
+  "name": "invasive_species",
+  "version": "1.0.0",
+  "description": "For project 3, our goal is to place recent sightings of invasive species on an interactive map. To do this, we will be using the iNaturalist API and some basic web scraping.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ianmkinney/invasive_species.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ianmkinney/invasive_species/issues"
+  },
+  "homepage": "https://github.com/ianmkinney/invasive_species#readme",
+  "dependencies": {
+    "requirejs": "^2.3.6",
+    "tabulator": "^0.2.40",
+    "tabulator-tables": "^4.9.3"
+  }
+}

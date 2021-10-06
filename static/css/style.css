@@ -22,20 +22,20 @@ body {
   position: absolute;
   top: relative;
   height: 40%;
-  width: 60%;
+  width: 40%;
 }
 
 #bar {
   position: absolute;
   bottom: 0;
-  width: 60%;
+  width: 40%;
   height: 50%;
 }
 
 #burst {
   position: absolute;
   right: 0;
-  width: 40%;
+  width: 60%;
   height: 80%;
   opacity: 100%;
   background-color: white;
