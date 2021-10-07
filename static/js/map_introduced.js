@@ -61,5 +61,37 @@ d3.json(observations_json).then(function (data) {
     }
   ];
   
-  Plotly.newPlot('bar', data);
+  var layout = {
+    title: {
+      text:'Plot Title',
+      font: {
+        family: 'Courier New, monospace',
+        size: 24
+      },
+      xref: 'paper',
+      x: 0.05,
+    },
+    xaxis: {
+      title: {
+        text: 'Taxon Species Name',
+        font: {
+          family: 'Courier New, monospace',
+          size: 18,
+          color: '#7f7f7f'
+        }
+      },
+    },
+    yaxis: {
+      title: {
+        text: 'Number of Observations',
+        font: {
+          family: 'Courier New, monospace',
+          size: 18,
+          color: '#7f7f7f'
+        }
+      }
+    }
+  };
+
+  Plotly.newPlot('bar', data, layout);
 });
