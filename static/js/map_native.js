@@ -63,7 +63,7 @@ d3.json(observations_json).then(function(data) {
   ];
   var layout = {
     title: {
-      text:'Bar graph For Species Observed',
+      text:'Bar graph For Taxon Observed',
       font: {
         family: 'Courier New, monospace',
         size: 24
