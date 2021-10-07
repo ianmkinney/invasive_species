@@ -30,4 +30,12 @@ This chart was created using leaflet.js (https://leafletjs.com/)
 
 ### Taxon Bar Chart
 
-![alt text](static/img/map.png)
+![alt text](static/img/bar-chart.png)
+
+This chart shows the number of observations by taxon (plantae, amphibia, etc.) and is hoverable so the user can see the exact number. 
+
+This chart was created with plotly.js (https://plotly.com/javascript/)
+
+### App Back-End
+
+The application is hosted by Heroku and uses a Flask server implementation. We also have a PostgresSQL database hosted by Heroku. 
