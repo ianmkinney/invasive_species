@@ -15,30 +15,35 @@ h3 {
 body {
     padding: 0;
     margin: 0;
-    background-image: url('../img/savannah-trees.jpeg');
+    background-color: white;
 }
   
 #map {
   position: absolute;
-  top: relative;
-  height: 40%;
-  width: 40%;
+  left:0;
+  height: 30%;
+  width: 50%;
 }
 
 #bar {
+  margin-top: -100px;
   position: absolute;
   bottom: 0;
-  width: 40%;
-  height: 50%;
+  width: 50%;
+  height: 30%;
 }
 
 #burst {
   position: absolute;
   right: 0;
-  width: 60%;
-  height: 80%;
+  width: 50%;
   opacity: 100%;
   background-color: white;
+}
+
+#chartdiv {
+  width: 100%;
+  height: 200px;
 }
 
 .btn-group button {
@@ -64,9 +69,4 @@ body {
 /* Add a background color on hover */
 .btn-group button:hover {
   background-color: #3e8e41;
-}
-
-#chartdiv {
-  width: 100%;
-  height: 500px;
 }
